@@ -1,0 +1,128 @@
+*{
+    box-sizing: border-box;
+}
+body{
+    background:hsl(228deg 11% 9%);
+    margin:0px;
+    padding:0px;
+}
+
+.container{
+    height: 100vh;
+}
+
+.middle{
+    display:flex;
+    justify-content: center;
+    align-items:center;
+}
+
+@mixin middle{
+    display:flex;
+    justify-content: center;
+    align-items:center;
+}
+
+.hidden{
+    display:none;
+}
+
+ul{
+    margin:0px;
+}
+
+.card-group{
+    position:relative;
+    //background:green;
+    width:300px;
+    height: 450px;
+
+    .card{
+        position:absolute;
+        width:300px;
+        //height:400px;
+        background:rgb(224, 149, 9);
+        transition:200ms;
+        border-radius: 10px;
+        overflow: hidden;
+        font-size:16px;
+        cursor:pointer;
+
+        div{
+            padding:10px;
+            @include middle;
+            flex-direction: column;
+        }
+
+        ul{
+            margin:0px;
+            padding:0px;
+            width:100%;
+            list-style:none;
+        }
+
+        .card-head{
+            height:150px;
+            //background:pink;
+
+            .price{
+                font-size:4rem;
+            }
+
+            .title{
+                font-size:2rem;
+                position:absolute;
+                top:120px;
+            }
+        }
+
+        .card-body{
+            height:200px;
+            //background:rgb(230, 179, 11);
+            
+            justify-content: left;
+
+            .description{
+                width:100%;
+                text-align: left;
+            }
+        }
+
+        .card-footer{
+            height:100px;
+            background:rgb(199, 132, 7);
+
+            .action{
+                display:none;
+            }
+        }
+    }
+
+    .selected{
+        box-shadow:0px 0px 20px 0px black;
+        z-index:2;
+
+        .action{
+            display:block!important;
+            background:rgb(221, 200, 8);
+            font-size:1.2em;
+            border-radius: 25px;
+            width:150px;
+            padding:5px;
+        }
+    }
+
+    .left{
+        background:linear-gradient(to bottom, rgb(141, 94, 6), rgb(224, 149, 9), rgb(224, 149, 9));
+        transform:translateX(-90%) scale(0.9)
+    }
+
+    .right{
+        background:linear-gradient(to bottom, rgb(141, 94, 6), rgb(224, 149, 9), rgb(224, 149, 9));
+        transform:translateX(90%) scale(0.9)
+    }
+
+    
+
+
+}

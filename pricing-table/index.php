@@ -125,8 +125,6 @@
         //card.classList.add('selected')
       })
     })
-
-    
   })()
   </script>
   
